@@ -45,16 +45,16 @@
     <blockBeginStep class="BlockBeginStep" id="2"/>
     <steps class="ArrayList">
       <object class="Transition" serializationversion="3" id="3">
-        <property name="name" class="String">Load Page</property>
+        <property name="name" class="String" id="4">Load Page</property>
         <property name="stepAction" class="LoadPage2">
           <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ValueURLProvider2">
             <property name="URL" class="String">www.ya.ru</property>
           </property>
           <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="25">
-            <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep"/>
+            <property name="ancestorProvider" class="BrowserConfigurationSpecificationAncestorProviderForStep" id="5"/>
           </property>
         </property>
-        <property name="elementFinders" class="ElementFinders"/>
+        <property name="elementFinders" class="ElementFinders" id="6"/>
         <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
         <property name="comment">
           <null/>
@@ -62,7 +62,25 @@
         <property name="enabled" idref="1"/>
         <property name="changedProperties" class="java.util.HashSet"/>
       </object>
-      <object class="End" id="4"/>
+      <object class="Transition" serializationversion="3" id="7">
+        <property name="name" idref="4"/>
+        <property name="stepAction" class="LoadPage2">
+          <property name="urlProvider" class="kapow.robot.plugin.common.stepaction.urlprovider2.ValueURLProvider2">
+            <property name="URL" class="String">www.rbc.ru</property>
+          </property>
+          <property name="browserConfigurationSpecification" class="BrowserConfigurationSpecificationWebKit" serializationversion="25">
+            <property name="ancestorProvider" idref="5"/>
+          </property>
+        </property>
+        <property name="elementFinders" idref="6"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="1"/>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="End" id="8"/>
     </steps>
     <blockEndStep class="BlockEndStep"/>
     <edges class="ArrayList">
@@ -72,7 +90,11 @@
       </object>
       <object class="TransitionEdge">
         <from idref="3"/>
-        <to idref="4"/>
+        <to idref="7"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="7"/>
+        <to idref="8"/>
       </object>
     </edges>
   </property>
